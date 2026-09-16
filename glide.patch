@@ -1,0 +1,47 @@
+diff --git a/app/src/main/java/com/cloudstream/ui/adapters/HomeAdapter.kt b/app/src/main/java/com/cloudstream/ui/adapters/HomeAdapter.kt
+index 1111111..2222222 100644
+--- a/app/src/main/java/com/cloudstream/ui/adapters/HomeAdapter.kt
++++ b/app/src/main/java/com/cloudstream/ui/adapters/HomeAdapter.kt
+@@ -5,7 +5,9 @@
+-import coil.load
++import com.bumptech.glide.Glide
++import com.bumptech.glide.request.RequestOptions
+ import android.widget.ImageView
+
+- holder.poster.load(item.posterUrl)
++ Glide.with(holder.poster.context)
++     .load(item.posterUrl)
++     .apply(RequestOptions().disallowHardwareConfig())
++     .into(holder.poster)
+
+diff --git a/app/src/main/java/com/cloudstream/ui/adapters/SearchAdapter.kt b/app/src/main/java/com/cloudstream/ui/adapters/SearchAdapter.kt
+index 3333333..4444444 100644
+--- a/app/src/main/java/com/cloudstream/ui/adapters/SearchAdapter.kt
++++ b/app/src/main/java/com/cloudstream/ui/adapters/SearchAdapter.kt
+@@ -6,7 +6,9 @@
+-import coil.load
++import com.bumptech.glide.Glide
++import com.bumptech.glide.request.RequestOptions
+ import android.widget.ImageView
+
+- holder.poster.load(result.posterUrl)
++ Glide.with(holder.poster.context)
++     .load(result.posterUrl)
++     .apply(RequestOptions().disallowHardwareConfig())
++     .into(holder.poster)
+
+diff --git a/app/src/main/java/com/cloudstream/ui/adapters/WatchlistAdapter.kt b/app/src/main/java/com/cloudstream/ui/adapters/WatchlistAdapter.kt
+index 5555555..6666666 100644
+--- a/app/src/main/java/com/cloudstream/ui/adapters/WatchlistAdapter.kt
++++ b/app/src/main/java/com/cloudstream/ui/adapters/WatchlistAdapter.kt
+@@ -6,7 +6,9 @@
+-import coil.load
++import com.bumptech.glide.Glide
++import com.bumptech.glide.request.RequestOptions
+ import android.widget.ImageView
+
+- holder.poster.load(watch.posterUrl)
++ Glide.with(holder.poster.context)
++     .load(watch.posterUrl)
++     .apply(RequestOptions().disallowHardwareConfig())
++     .into(holder.poster)
