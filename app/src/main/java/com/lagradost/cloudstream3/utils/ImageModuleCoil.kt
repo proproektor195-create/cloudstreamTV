@@ -38,7 +38,7 @@ object ImageLoader {
 
     internal fun buildImageLoader(context: PlatformContext): ImageLoader = ImageLoader.Builder(context)
             .crossfade(200)
-            .allowHardware(SDK_INT >= 28) // SDK_INT >= 28, cant use hardware bitmaps for Palette Builder
+            .allowHardware(false) // SDK_INT >= 28, cant use hardware bitmaps for Palette Builder
             .diskCachePolicy(CachePolicy.ENABLED)
             .networkCachePolicy(CachePolicy.ENABLED)
             .memoryCache {
